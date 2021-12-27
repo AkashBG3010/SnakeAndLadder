@@ -23,19 +23,31 @@ public class SnakeAndLadder {
 				break;
 			case LADDER:
                 pos = pos + roll;
-                System.out.println("New Position is: " + pos);
+                if(pos <= 100)
+                	System.out.println("New Position is: " + pos);
+                else{
+					pos = pos - roll;
+					System.out.println("Remains at same position: " + pos);
+                }
                 break;
 			case SNAKE:
-                pos = pos - roll;
-					if ( pos >= 0)
-						System.out.println("New Position is: " + pos);
-					else
-						pos = 0;
-						System.out.println("New Position is: " + pos);
-						break;
-			default:
-					System.out.println("Default");
-					break;
+				 pos = pos - roll;
+                 if (pos <= 100){
+                 if (pos >= 0 ){
+                 System.out.println("New Position is: " + pos);
+						}
+                 else{
+                 pos = 0;
+                 System.out.println("New Position is: " + pos);
+                 }
+						}
+                 else{
+                 System.out.println("New position is:" + pos);
+						}
+                 break;
+           default:
+                 System.out.println("Default");
+                 break;
 		 }
     }
     System.out.println();
