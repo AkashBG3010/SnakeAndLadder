@@ -9,7 +9,8 @@ public class SnakeAndLadder {
 	public static void main(String[] args) {	
 		int pos = 0;
 		System.out.println("Starting position of player is: " + START);
-		
+		while(pos <= 100){
+			
 		int roll = (int) (Math.floor(Math.random() * 10) % 6 + 1);
 		System.out.println("Number on rolled dice is : " +roll);
 		
@@ -35,6 +36,10 @@ public class SnakeAndLadder {
 			default:
 					System.out.println("Default");
 					break;
-			}
-		}
+		 }
+    }
+    System.out.println();
+    if (pos >= 100)
+    System.out.println("    player won, Game ends!");
+    }
 }
