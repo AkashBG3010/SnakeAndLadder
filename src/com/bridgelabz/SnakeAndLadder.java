@@ -7,19 +7,21 @@ public class SnakeAndLadder {
 	public static final int START = 0;
 
 	public static void main(String[] args) {	
-		int pos = 0;
+		int pos = 0, counter1 = 0, counter2 = 0, counter3 = 0, counter4 = 0;;
 		System.out.println("Starting position of player is: " + START);
 		while(pos <= 100){
 			
 		int roll = (int) (Math.floor(Math.random() * 10) % 6 + 1);
+		counter1++;
 		System.out.println("Number on rolled dice is : " +roll);
-		
+
 		int con = (int) (Math.floor(Math.random() * 10) % 3);
 		System.out.println("Condition: " +con);
 		
 		switch (con){
 			case NO_PLAY:
 				System.out.println("New Position is: " + pos);
+				counter4++;
 				break;
 			case LADDER:
                 pos = pos + roll;
@@ -29,6 +31,7 @@ public class SnakeAndLadder {
 					pos = pos - roll;
 					System.out.println("Remains at same position: " + pos);
                 }
+                counter2++;
                 break;
 			case SNAKE:
 				 pos = pos - roll;
@@ -43,7 +46,8 @@ public class SnakeAndLadder {
 						}
                  else{
                  System.out.println("New position is:" + pos);
-						}
+				}
+                 counter3++;
                  break;
            default:
                  System.out.println("Default");
